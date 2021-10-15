@@ -1,0 +1,16 @@
+spring:
+  kafka:
+    template:
+      default-topic: messages
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 5
+    admin:
+      properties:
+        bootstrap.servers: localhost:9092
+        fail-fast: true
+server:
+  port: 9090
